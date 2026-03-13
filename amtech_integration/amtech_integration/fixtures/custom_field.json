@@ -1,0 +1,13 @@
+[
+  {
+    "doctype": "Custom Field",
+    "dt": "Delivery Note",
+    "fieldname": "amtech_trip_id",
+    "label": "Amtech Trip ID",
+    "fieldtype": "Data",
+    "read_only": 1,
+    "insert_after": "lr_no",
+    "description": "TruckTripID from Amtech Sign & Drive (auto-populated on sync)",
+    "module": "Amtech Integration"
+  }
+]

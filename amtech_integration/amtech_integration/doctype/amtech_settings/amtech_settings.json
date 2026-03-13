@@ -1,0 +1,160 @@
+{
+  "actions": [],
+  "creation": "2026-03-12 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "issingle": 1,
+  "field_order": [
+    "connection_section",
+    "base_url",
+    "username",
+    "password",
+    "data_source_id",
+    "col1",
+    "token",
+    "token_expires_at",
+    "test_connection_btn",
+    "sync_section",
+    "auto_sync_deliveries",
+    "sync_interval_minutes",
+    "col2",
+    "sync_on_submit",
+    "include_osd_notes",
+    "log_section",
+    "last_sync_at",
+    "last_sync_status",
+    "last_sync_message"
+  ],
+  "fields": [
+    {
+      "fieldname": "connection_section",
+      "fieldtype": "Section Break",
+      "label": "API Connection"
+    },
+    {
+      "fieldname": "base_url",
+      "fieldtype": "Data",
+      "label": "Amtech API Base URL",
+      "reqd": 1,
+      "default": "https://signanddrive.acmebox.com",
+      "description": "Base URL for the Amtech Encore / Sign & Drive API (no trailing slash)"
+    },
+    {
+      "fieldname": "username",
+      "fieldtype": "Data",
+      "label": "API Username",
+      "reqd": 1
+    },
+    {
+      "fieldname": "password",
+      "fieldtype": "Password",
+      "label": "API Password",
+      "reqd": 1,
+      "description": "Stored encrypted. Used to obtain Bearer token."
+    },
+    {
+      "fieldname": "data_source_id",
+      "fieldtype": "Data",
+      "label": "Data Source ID",
+      "description": "Optional — if Amtech hosts multiple data sources for your account"
+    },
+    {
+      "fieldname": "col1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "token",
+      "fieldtype": "Small Text",
+      "label": "Cached Bearer Token",
+      "read_only": 1,
+      "description": "Auto-populated when connection is tested or first sync runs"
+    },
+    {
+      "fieldname": "token_expires_at",
+      "fieldtype": "Datetime",
+      "label": "Token Expires At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "test_connection_btn",
+      "fieldtype": "Button",
+      "label": "Test Connection"
+    },
+    {
+      "fieldname": "sync_section",
+      "fieldtype": "Section Break",
+      "label": "Sync Settings",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "auto_sync_deliveries",
+      "fieldtype": "Check",
+      "label": "Auto-Sync Delivery Notes to Amtech",
+      "default": "1",
+      "description": "When a Delivery Note is submitted, automatically push to Amtech Sign & Drive"
+    },
+    {
+      "fieldname": "sync_interval_minutes",
+      "fieldtype": "Int",
+      "label": "Completion Poll Interval (minutes)",
+      "default": "15",
+      "description": "How often to poll Amtech for delivery completions / OSD data"
+    },
+    {
+      "fieldname": "col2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "sync_on_submit",
+      "fieldtype": "Check",
+      "label": "Sync on Delivery Note Submit",
+      "default": "1"
+    },
+    {
+      "fieldname": "include_osd_notes",
+      "fieldtype": "Check",
+      "label": "Write OSD Comments Back to Delivery Note",
+      "default": "1",
+      "description": "When Amtech reports Over/Short/Damaged items, append note to the Delivery Note"
+    },
+    {
+      "fieldname": "log_section",
+      "fieldtype": "Section Break",
+      "label": "Last Sync Status",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "last_sync_at",
+      "fieldtype": "Datetime",
+      "label": "Last Sync At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_sync_status",
+      "fieldtype": "Select",
+      "label": "Last Sync Status",
+      "options": "\nSuccess\nPartial\nError",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_sync_message",
+      "fieldtype": "Small Text",
+      "label": "Last Sync Message",
+      "read_only": 1
+    }
+  ],
+  "links": [],
+  "modified": "2026-03-12 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Amtech Integration",
+  "name": "Amtech Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1
+    }
+  ],
+  "track_changes": 0
+}

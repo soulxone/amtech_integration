@@ -1,0 +1,140 @@
+{
+  "actions": [],
+  "creation": "2026-03-12 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "sync_type",
+    "sync_date",
+    "status",
+    "col1",
+    "records_sent",
+    "records_received",
+    "records_failed",
+    "details_section",
+    "reference_doctype",
+    "reference_name",
+    "amtech_trip_id",
+    "payload_section",
+    "request_payload",
+    "response_payload",
+    "error_message"
+  ],
+  "fields": [
+    {
+      "fieldname": "sync_type",
+      "fieldtype": "Select",
+      "label": "Sync Type",
+      "options": "Delivery Push\nCompletion Poll\nOSD Update\nManual",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "sync_date",
+      "fieldtype": "Datetime",
+      "label": "Sync Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Success\nPartial\nError",
+      "reqd": 1,
+      "in_list_view": 1,
+      "bold": 1
+    },
+    {
+      "fieldname": "col1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "records_sent",
+      "fieldtype": "Int",
+      "label": "Records Sent",
+      "default": "0"
+    },
+    {
+      "fieldname": "records_received",
+      "fieldtype": "Int",
+      "label": "Records Received",
+      "default": "0"
+    },
+    {
+      "fieldname": "records_failed",
+      "fieldtype": "Int",
+      "label": "Records Failed",
+      "default": "0"
+    },
+    {
+      "fieldname": "details_section",
+      "fieldtype": "Section Break",
+      "label": "Record Details"
+    },
+    {
+      "fieldname": "reference_doctype",
+      "fieldtype": "Link",
+      "label": "Reference DocType",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "reference_name",
+      "fieldtype": "Dynamic Link",
+      "label": "Reference Name",
+      "options": "reference_doctype"
+    },
+    {
+      "fieldname": "amtech_trip_id",
+      "fieldtype": "Data",
+      "label": "Amtech Trip ID",
+      "description": "TruckTripID returned from Amtech API"
+    },
+    {
+      "fieldname": "payload_section",
+      "fieldtype": "Section Break",
+      "label": "Payload Details",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "request_payload",
+      "fieldtype": "Code",
+      "label": "Request Payload (JSON)",
+      "options": "JSON",
+      "read_only": 1
+    },
+    {
+      "fieldname": "response_payload",
+      "fieldtype": "Code",
+      "label": "Response Payload (JSON)",
+      "options": "JSON",
+      "read_only": 1
+    },
+    {
+      "fieldname": "error_message",
+      "fieldtype": "Small Text",
+      "label": "Error Message",
+      "read_only": 1
+    }
+  ],
+  "links": [],
+  "modified": "2026-03-12 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Amtech Integration",
+  "name": "Amtech Sync Log",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 0,
+      "delete": 0
+    },
+    {
+      "role": "Logistics Manager",
+      "read": 1,
+      "write": 0
+    }
+  ],
+  "track_changes": 0
+}
