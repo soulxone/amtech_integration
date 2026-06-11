@@ -1,0 +1,15 @@
+[project]
+name = "amtech_integration"
+version = "0.1.0"
+description = "Amtech Encore ERP / Sign & Drive integration for ERPNext"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.28.0",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "amtech_integration"
