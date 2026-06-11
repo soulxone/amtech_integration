@@ -5,6 +5,9 @@ app_description = "Amtech Encore ERP / Sign & Drive integration for ERPNext"
 app_email = "soulxone@gmail.com"
 app_license = "MIT"
 
+# Fixture adds a Custom Field on Delivery Note; sync hooks target ERPNext docs.
+required_apps = ["frappe", "erpnext"]
+
 # ── Document events ────────────────────────────────────────────────────────────
 # Sync ERPNext Delivery Notes to Amtech Sign & Drive when submitted
 doc_events = {
@@ -34,5 +37,5 @@ fixtures = [
 
 # ── Delivery Note — "Push to Amtech" button ────────────────────────────────────
 doctype_js = {
-    "Delivery Note": "amtech_integration/amtech_integration/public/js/delivery_note_amtech.js",
+    "Delivery Note": "public/js/delivery_note_amtech.js",
 }
